@@ -5,7 +5,7 @@ const express = require('express');
 const app = express();
 
 // other packages
-const morgan = require('morgan');
+// const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const xss = require('xss-clean');
@@ -18,7 +18,7 @@ const jobsRouter = require('./routes/jobRoutes');
 const notFoundMiddleware = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
 // middlewares
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 app.use(express.json());
 
 app.set('trust proxy', 1);
