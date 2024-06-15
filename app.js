@@ -30,7 +30,11 @@ app.use(
 );
 app.use(express.json());
 app.use(helmet());
-app.use(cors());
+app.use(
+  cors({
+    origin: 'https://dolphin-app-oreg7.ondigitalocean.app', // Allow your frontend domain
+  })
+);
 app.use(xss());
 
 app.get('/', (req, res) => {
