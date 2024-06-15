@@ -33,6 +33,10 @@ app.use(helmet());
 app.use(cors());
 app.use(xss());
 
+app.get('/', (req, res) => {
+  res.send('React-Jobs Backend says hello');
+});
+
 app.use('/api/jobs', jobsRouter);
 
 app.use(notFoundMiddleware);
