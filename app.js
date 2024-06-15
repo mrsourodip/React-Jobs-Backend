@@ -30,16 +30,14 @@ app.use(
 );
 app.use(express.json());
 app.use(helmet());
-app.use(
-  cors({
-    origin: 'https://dolphin-app-oreg7.ondigitalocean.app', // Allow your frontend domain
-  })
-);
+app.use(cors());
 app.use(xss());
 
-app.get('/', (req, res) => {
-  res.send('React-Jobs Backend says hello');
-});
+app.use(express.static('dist'));
+
+// app.get('/', (req, res) => {
+//   res.send('React-Jobs Backend says hello');
+// });
 
 app.use('/api/jobs', jobsRouter);
 
